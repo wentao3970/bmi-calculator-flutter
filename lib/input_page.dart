@@ -35,7 +35,10 @@ class _InputPageState extends State<InputPage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.person),
+                          Icon(
+                            Icons.person,
+                            color: Colors.white,
+                          ),
                           'child'.text.makeCentered(),
                         ],
                       ),
