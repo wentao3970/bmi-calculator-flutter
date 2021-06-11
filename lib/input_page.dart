@@ -88,20 +88,21 @@ class _InputPageState extends State<InputPage> {
               ).p12(),
             ),
             Expanded(
-                child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    child: 'child'.text.makeCentered(),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      child: 'child'.text.makeCentered(),
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    child: 'child'.text.makeCentered(),
+                  Expanded(
+                    child: Container(
+                      child: 'child'.text.makeCentered(),
+                    ),
                   ),
-                ),
-              ],
-            ))
+                ],
+              ),
+            ),
           ],
         ),
       ),
