@@ -1,7 +1,11 @@
+import 'package:bmi_calculator/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import 'item_cell.dart';
+
 const backgroundColor = Color(0xFF0E112F);
+const _kTextColor = Colors.grey;
 
 class InputPage extends StatefulWidget {
   @override
@@ -26,28 +30,27 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      child: 'child'.text.makeCentered(),
+                    child: ItemCell(
+                      childWidget: 'MAN'
+                          .text
+                          .bold
+                          .headline6(context)
+                          .color(_kTextColor)
+                          .make(),
                     ),
                   ),
                   Expanded(
-                    child: Container(
-                      width: double.infinity,
-                      color: Color(0xFF2D1D04),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.person,
-                            color: Colors.white,
-                          ),
-                          'child'.text.makeCentered(),
-                        ],
-                      ),
+                    child: ItemCell(
+                      childWidget: 'WOMAN'
+                          .text
+                          .bold
+                          .headline6(context)
+                          .color(_kTextColor)
+                          .make(),
                     ),
                   ),
                 ],
-              ).p12(),
+              ),
             ),
             Expanded(
               child: Container(
@@ -64,7 +67,7 @@ class _InputPageState extends State<InputPage> {
                             .white
                             .bold
                             .make(),
-                        'cm'.text.subtitle1(context).gray500.make(),
+                        'cm'.text.subtitle1(context).color(_kTextColor).make(),
                       ],
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -91,18 +94,44 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      child: 'child'.text.makeCentered(),
+                    child: ItemCell(
+                      childWidget: 'weight'
+                          .text
+                          .uppercase
+                          .semiBold
+                          .color(_kTextColor)
+                          .make(),
                     ),
                   ),
                   Expanded(
-                    child: Container(
-                      child: 'child'.text.makeCentered(),
+                    child: ItemCell(
+                      childWidget: 'age'
+                          .text
+                          .uppercase
+                          .semiBold
+                          .color(_kTextColor)
+                          .make(),
                     ),
                   ),
                 ],
               ),
             ),
+            Container(
+              color: Colors.pink[400],
+              height: 80,
+              width: double.infinity,
+              child: 'calculate'
+                  .text
+                  .uppercase
+                  .headline6(context)
+                  .bold
+                  .white
+                  .makeCentered(),
+            ).pOnly(top: 12.0).onTap(() {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ResultPage();
+              }));
+            })
           ],
         ),
       ),
