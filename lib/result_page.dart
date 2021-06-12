@@ -13,8 +13,16 @@ class ResultPage extends StatelessWidget {
         elevation: 0.0,
         title: 'BMI Calculator'.text.make(),
       ),
-      body: Container(
-        child: 'Calculation result'.text.white.make(),
+      body: Column(
+        children: [
+          Expanded(
+            child: 'Calculation result'
+                .text
+                .headline6(context)
+                .white
+                .makeCentered(),
+          ),
+        ],
       ),
     );
   }
